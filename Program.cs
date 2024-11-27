@@ -26,20 +26,21 @@ namespace busForSchool
                         AddStudent(studentList, ref studentCount);
                         break;
                     case 2:
+                        Console.Clear();
                         Console.WriteLine($"toplam öğrenci sayısı: {studentCount}");
-                        break;
+                        Thread.Sleep(2000);
+                        goto print;
+                        
                     case 3:
                         BusCapacity(ref busCapacity);
                         break;
-                    case 4:
-                        goto print;
                     default:
                         Console.WriteLine("Hatalı Giriş Yaptınız");
                         break;
                 }
             }
             print:
-            if (busCapacity < studentCount) 
+            if (busCapacity >= studentCount) 
             {
                 Console.WriteLine("otobüs kapastiesi aşılmıştır");
             }
